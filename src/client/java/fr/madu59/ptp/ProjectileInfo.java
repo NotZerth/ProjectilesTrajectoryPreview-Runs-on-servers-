@@ -22,7 +22,6 @@ import net.minecraft.world.item.ExperienceBottleItem;
 import net.minecraft.world.item.FishingRodItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemStackTemplate;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.SnowballItem;
 import net.minecraft.world.item.ThrowablePotionItem;
@@ -93,7 +92,7 @@ public class ProjectileInfo {
         Vec3 position = player.getEyePosition(tickProgress).add(new Vec3(0,- 0.10000000149011612,0));
 
         if (item instanceof BowItem && SettingsManager.TOGGLE_BOW.getValue()) {
-            
+
             int useTicks = player.getTicksUsingItem();
             float pull = BowItem.getPowerForTime(useTicks);
 
@@ -110,12 +109,12 @@ public class ProjectileInfo {
             ChargedProjectiles chargedProjectilesComponent = itemStack.get(DataComponents.CHARGED_PROJECTILES);
 
             if(chargedProjectilesComponent != null){
-                for (ItemStackTemplate projectile : chargedProjectilesComponent.items()) {
+                for (ItemStack projectile : chargedProjectilesComponent.getItems()) {
                     if (projectile.is(Items.FIREWORK_ROCKET)) {
                         vel = player.getViewVector(tickProgress).scale(1.6F);
                         gravity = 0;
                         waterDrag = drag;
-                    } else if (projectile.item() instanceof ArrowItem) {
+                    } else if (projectile.getItem() instanceof ArrowItem) {
                         
                     }
                 }
@@ -155,6 +154,7 @@ public class ProjectileInfo {
             projectileInfoList.add(new ProjectileInfo(gravity, drag, vel, offset, position, false, waterDrag, ORDER_GDM, bypassAntiCheat));
             
         } else if (item instanceof WindChargeItem && SettingsManager.TOGGLE_WINDCHARGE.getValue()) {
+
 
             gravity = 0;
             drag = 0.95;
