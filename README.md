@@ -29,10 +29,6 @@ To edit the settings of the mod:
 - Minecraft Projectiles often have a random offset, so the actual impact may sometime differs a bit from the preview.
 - Modded items are not yet supported. If you want compatibility with a specific mod, open an issue on Github and suggest it, I'll do my best to add it.
 
-## 🛑 Usage on servers 
-
-This mod doesn't work on servers to prevent using it as a cheat in PVP. If you want to have it on your custom servers, you still can, just install the mod on both, the client and the server.
-
 ## 📦 Modpack
 
 Feel free to add this mod in your modpacks.
