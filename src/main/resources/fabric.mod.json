@@ -2,14 +2,15 @@
 	"schemaVersion": 1,
 	"id": "ptp",
 	"version": "${version}",
-	"name": "Projectiles Trajectory Prediction",
-	"description": "Shows the trajectory of projectiles like arrows, snowballs, eggs, tridents and ender pearls.",
+	"name": "Projectiles Trajectory Prediction (Fork)",
+	"description": "Shows the trajectory of projectiles like arrows, snowballs, eggs, tridents and ender pearls. ( Previously client-side only, the mod now fully supports multiplayer ) ",
 	"authors": [
-		"maDU59_"
+		"maDU59_",
+		"ZerthDev"
 	],
 	"contact": {
-		"homepage": "https://madu59.github.io/",
-		"sources": "https://github.com/maDU59/ProjectilesTrajectoryPreview"
+		"homepage": "https://github.com/NotZerth",
+		"sources": "https://github.com/NotZerth/ProjectilesTrajectoryPreview-Runs-on-servers-"
 	},
 	"license": "MIT",
 	"icon": "assets/ptp/icon.png",

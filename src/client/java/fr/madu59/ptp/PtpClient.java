@@ -70,9 +70,15 @@ public class PtpClient implements ClientModInitializer {
                 return;
             }
 
-            // Send handshake to server
-            ClientPlayNetworking.send(new HANDSHAKE_C2SPayload("Check if is installed on server"));
-            LOGGER.info("[PTP] Sending handshake to server...");
+            // Only send the handshake if the server actually advertises the channel.
+            // On vanilla servers the channel is unknown and ClientPlayNetworking.send
+            // would otherwise throw and break the connection.
+            if (ClientPlayNetworking.canSend(HANDSHAKE_C2SPayload.ID)) {
+                ClientPlayNetworking.send(new HANDSHAKE_C2SPayload("Check if is installed on server"));
+                LOGGER.info("[PTP] Sending handshake to server...");
+            } else {
+                LOGGER.info("[PTP] Server does not advertise PTP channel, mod features disabled.");
+            }
         });
 
         // Receive handshake reply
